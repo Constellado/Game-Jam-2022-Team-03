@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
     public GameObject helperObject;
     public GameObject otherHelperObject;
     private CharacterController charControl;
+    Vector3 pos;
+    Quaternion rot;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +58,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        (Vector3 pos, Quaternion rot) = GetDirection();
+        (pos, rot) = GetDirection();
+
         if (Input.GetButtonDown("Fire1")) { gunAttacking = true; }
         if (Input.GetButtonDown("Fire2")) { swordAttacking = true; }
         GetDirection();
@@ -157,10 +160,11 @@ public class PlayerController : MonoBehaviour
                     if (swordClock >= swordAttackDelay + swordAttackCutTime)
                     {
                         //Turn off sword
+                        swordState = 3;
                     }
                         break;
                 case 3:
-                    if (swordClock >= swordAttackDelay + swordAttackCooldown)
+                    if (swordClock >= swordAttackDelay + swordAttackCutTime + swordAttackCooldown)
                     {
                         swordState = 0; swordClock = 0f; swordAttacking = false;
                     }

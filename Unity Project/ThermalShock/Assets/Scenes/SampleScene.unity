@@ -2503,6 +2503,7 @@ MonoBehaviour:
   swordAttacking: 0
   swordHeatGenerated: 0
   swordAttackDelay: 0
+  swordAttackCutTime: 0
   swordAttackCooldown: 0
   swordObject: {fileID: 0}
   helperObject: {fileID: 1064134051}
@@ -7931,7 +7932,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3a1746361d8883c448f4daa1095827c9, type: 2}
+  - {fileID: 2100000, guid: 654f8722cbd1f5b419324e4a8da0b33b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

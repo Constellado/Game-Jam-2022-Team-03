@@ -21,7 +21,7 @@ public class PlayerSword : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Attackable hitObject = other.GetComponent<Attackable>();
-        if (other.name != "Player" && other != null) { hitObject.Hit(swordHeat, true); }
+        if (other.name != "Player" && hitObject != null) { hitObject.Hit(swordHeat, true); }
     }
 
 
